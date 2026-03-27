@@ -1,9 +1,0 @@
-packages/
-package.json
-package-lock.json
-node_modules/
-dist/
-index.json
-action.yaml
-index.js
-chapter3/
