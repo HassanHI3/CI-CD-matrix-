@@ -1,0 +1,18 @@
+# these are conditional expressions in yaml
+
+- name : Run tests
+  run: python -m unittest discover
+  if: success()
+
+
+# these are expressions that use github context to check the branch name
+- name: branch name
+  run: echo the branch is ${{ github.ref }}
+
+
+
+
+
+
+  #conditions allow you to control when ur job or step should run based off  certain material
+  #expressions is a way to perform calculations , maniples strains whin more for your network file
