@@ -29,7 +29,7 @@ on: [push]
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      -name: run tests
+      -name: run testss
       run: |
         cd chapter4
         python -m unittest discover chapter4
