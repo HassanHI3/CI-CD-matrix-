@@ -11,9 +11,9 @@ on:
         default: '3.8'
         type: choice
         options:
-        - 3.8
-        - 3.9
-        - 3.10
+        - '3.8'
+        - '3.9'
+        - '3.10'
 
 jobs:
   build:
@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: setup python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5s
         with:
           python-version: ${{ matrix.python-version }}
 
