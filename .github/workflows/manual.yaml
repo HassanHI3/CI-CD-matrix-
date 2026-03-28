@@ -1,7 +1,19 @@
 ---
-name: combined test - matrix
 
-on: [push]
+name: manual-workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      python-version:
+        description: 'Testing against python versions'
+        required: true
+        default: '3.8'
+        type: choice
+        options:
+        - 3.8
+        - 3.9
+        - 3.10
 
 jobs:
   build:
