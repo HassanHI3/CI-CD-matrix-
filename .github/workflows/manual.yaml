@@ -8,12 +8,12 @@ on:
       python-version:
         description: 'Testing against python versions'
         required: true
-        default: '3.8'
+        default: "3.8"
         type: choice
         options:
-        - '3.8'
-        - '3.9'
-        - '3.10'
+        - "3.8"
+        - "3.9"
+        - "3.10"
 
 jobs:
   build:
@@ -21,14 +21,14 @@ jobs:
 
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10"]
+        python-version: [${{ input.python-version }}] #change the strategy from matrix ["3.8", "3.9", "3.10"] to input for only one python version
 
     steps:
       - name: checkout-code
         uses: actions/checkout@v4
 
       - name: setup python
-        uses: actions/setup-python@v5s
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
 
