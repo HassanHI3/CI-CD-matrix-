@@ -19,10 +19,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        python-version: [${{ input.python-version }}] #change the strategy from matrix ["3.8", "3.9", "3.10"] to input for only one python version
-
     steps:
       - name: checkout-code
         uses: actions/checkout@v4
@@ -30,7 +26,7 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ input.python-version }}
 
       - name: install dependencies
         run: |
@@ -45,4 +41,4 @@ jobs:
 
       - name: notify success of build
         if: success()
-        run: echo "Tests passed on python ${{ matrix.python-version }}"
+        run: echo "Tests passed on python ${{ input.python-version }}"
