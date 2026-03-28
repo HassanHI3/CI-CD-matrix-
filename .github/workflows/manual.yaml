@@ -26,7 +26,7 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ input.python-version }}
+          python-version: ${{ inputs.python-version }}
 
       - name: install dependencies
         run: |
@@ -41,4 +41,4 @@ jobs:
 
       - name: notify success of build
         if: success()
-        run: echo "Tests passed on python ${{ input.python-version }}"
+        run: echo "Tests passed on python ${{ inputs.python-version }}"
